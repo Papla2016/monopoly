@@ -36,6 +36,17 @@ public class Property {
         this.owner = null;
         this.position = position % sellNum;
     }
+    public boolean buy(Player player,int cost){
+        if (player.getMoney() < cost){
+            return false;
+        }
+        player.addMoney(-cost);
+        player.addPropertie(this);
+        return true;
+    }
+    public boolean buy(Player player){
+        return buy(player,cost);
+    }
     public int newPosition(int pos) throws Exception{
         if (pos < 0 || pos > sellNum){
             throw new Exception("Не входит в поле");

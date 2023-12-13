@@ -33,6 +33,17 @@ public class Game {
             }
         }
     }
+    private void chooser(){
+        System.out.println(
+                """
+                Выберите, что хотите сделать на этой собственности:
+                1. - купить
+                2. - выставить на аукцион
+                3. - ничего не делать 
+                """
+        );
+        Scanner scanner = new Scanner(System.in);
+    }
     public void newRound(){
         for (Player player:board.getPlayers()){
             if (player.isInPrison()){
@@ -43,6 +54,7 @@ public class Game {
                 int firstDice = player.rollADice();
                 int secondDice = player.rollADice();
                 player.chanchePosition(firstDice + secondDice);
+
                 if (firstDice == secondDice){
                     if(counter >= 2){
                         goToCell(player);

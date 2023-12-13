@@ -10,8 +10,11 @@ package src.main;
 //    }
 //}
 // Java program to handle MouseListener events
+import src.assets.CheckedScanner;
+
 import java.awt.*;
 import java.awt.event.*;
+import java.util.Vector;
 import javax.swing.*;
 class Mouse {
 
@@ -25,9 +28,8 @@ class Mouse {
 
     // main class
     public static void main(String[] args) {
-            for (long j = 0; j < 2147483647; j++) {
-                System.out.println(j*j);
-            }
+            String v = CheckedScanner.scan(new Vector<>(){"yes"},"PISHI YES SUKA","NEPRAVELNO BLYAT");
+            System.out.println(v);
     }
 
 //        // create a frame
